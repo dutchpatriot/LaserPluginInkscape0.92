@@ -5,3 +5,10 @@ Multi passes is changed and added some extra features.
 
 Dimensions in inkscape 0.92 are correct.
 
+Place all the files except this README file to the extensions directory of Inkscape 0.92
+
+On linux location is:
+/usr/share/inkscape/extensions
+
+
+
