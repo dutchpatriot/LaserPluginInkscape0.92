@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>Dutchpatriot Tweaked jtechphonics</_name>
+    <id>dutchpatriot</id>
+	<dependency type="executable" location="extensions">laser.py</dependency>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+	<param name="laser-command" type="string" _gui-text="Laser ON Command:">M03</param>
+	<param name="laser-off-command" type="string" _gui-text="Laser OFF Command:">M05</param>
+	<param name="travel-speed" type="int" min="0" max="10000" _gui-text="Travel Speed (mm/min or in/min):">3000</param>
+	<param name="laser-speed" type="int" min="0" max="4000" _gui-text="Laser Speed (mm/min or in/min):">500</param>
+	<param name="laser-power" type="int" min="0" max="20000" _gui-text="Laser Power S# (0-255 or 0-12000):">255</param>
+	<param name="power-delay" type="float" min="0" max="1000" _gui-text="Power-On Delay (ms or s):">0</param>	
+	<param name="passes" type="int" min="1" max="100" _gui-text="Passes min 1 max 100:">1</param>
+	<param name="pass-depth" type="float" min="0" max="10" _gui-text="Lower Z ax by this amount per pass (mm - inch):">1</param>
+	<param name="start-travel" type="float" min="-100" max="100" _gui-text="Start -Z axis hight at (Z axis will go up (mm - inch)">0</param>
+	<param name="stop-travel" type="float" min="-100" max="100" _gui-text="Stop -Z axis lowering at (mm - inch)">0</param>
+	<param name="directory" type="string" _gui-text="Directory:"></param>
+	<param name="filename" type="string" _gui-text="Filename:">output.gcode</param>
+	<param name="add-numeric-suffix-to-filename" type="boolean" _gui-text="Add numeric suffix to filename">true</param>z
+
+  <param name="unit" type="enum" _gui-text="All Units (mm or in):">
+    <item value="G21 (All units in mm)">mm</item>
+    <item value="G20 (All units in inches)">in</item>
+  </param>
+			<_param name="fullhelp" type="description" xml:space="preserve">
+Tweaked Laser Tool: 
+Laser option start-travel: When a value is given here higher than 0 than the Z axis will travel that amount positive or. So value of 25 will bring your Z axis to G90 Z25 (mm - inch) and -25 will bring Z axis to G90 Z-25. This for me is my start engraving hight or thickness of the material!.
+
+Laser option stop-travel: When this value is given software will go to that Z axis level by the amount of units given at the option pass-depth resp. mm of inch.
+
+Example: If Laser option start-travel is 10 and the Laser option stop-travel is 0 at 11 passes of 1.1mm the Z-axis will first go up to 10mm than the second pass it wil lower itself 1.1mm to 8.9 mm until the stop-travel of 0 is made, after that the Z-axis will remain at that last stop-travel for the next passes!  
+
+NOTE: Always check your generated Gcode before execution!!!
+   
+</_param>	
+	<effect>
+		<effects-menu>
+			<submenu _name="LASER Gcode-GEN"/>
+		</effects-menu>
+		<object-type>path</object-type>
+  	</effect>
+
+	<script>
+		<command reldir="extensions" interpreter="python">laser.py</command>
+	</script>
+
+</inkscape-extension>
