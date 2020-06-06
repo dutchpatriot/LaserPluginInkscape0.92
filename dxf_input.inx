@@ -22,7 +22,7 @@
 - assume dxf drawing is in mm.
 - assume svg drawing is in pixels, at 90 dpi.
 - layers are preserved only on File->Open, not Import.
-- limited support for BLOCKS, use AutoCAD Explode Blocks instead, if needed.</_param>
+- limited support for BLOCKS, use AutoCAD Explode Blocks instead, if needed else not.</_param>
 		</page>
 	</param>
 	<input>
