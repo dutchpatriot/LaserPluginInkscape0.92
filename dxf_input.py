@@ -27,7 +27,7 @@ from StringIO import StringIO
 from urllib import quote
 
 def export_MTEXT():
-    # mandatory group codes : (1 or 3, 10, 20) (text, x, y)
+    # mandatory group codes for laser: (1 or 3, 10, 20) (text, x, y)
     if (vals[groups['1']] or vals[groups['3']]) and vals[groups['10']] and vals[groups['20']]:
         x = vals[groups['10']][0]
         y = vals[groups['20']][0]
