@@ -10,7 +10,7 @@
 	<param name="laser-speed" type="int" min="0" max="4000" _gui-text="Laser Speed (mm/min or in/min):">500</param>
 	<param name="laser-power" type="int" min="0" max="20000" _gui-text="Laser Power S# (0-255 or 0-12000):">255</param>
 	<param name="power-delay" type="float" min="0" max="1000" _gui-text="Power-On Delay (ms or s):">0</param>	
-	<param name="passes" type="int" min="1" max="100" _gui-text="Passes min 1 max 100:">1</param>
+	<param name="passes" type="int" min="1" max="100" _gui-text="Passes min 1 max 100::">1</param>
 	<param name="pass-depth" type="float" min="0" max="10" _gui-text="Lower Z ax by this amount per pass (mm - inch):">1</param>
 	<param name="start-travel" type="float" min="-100" max="100" _gui-text="Start -Z axis hight at (Z axis will go up (mm - inch)">0</param>
 	<param name="stop-travel" type="float" min="-100" max="100" _gui-text="Stop -Z axis lowering at (mm - inch)">0</param>
